@@ -1,8 +1,10 @@
-package com.calculator;
+package com.calculator.Parser;
 
+
+import com.calculator.Model.Expression;
 
 public class Parser {
-    Expression parseString(String expression) {
+    public Expression parseString(String expression) {
         String[] expresionsMassive = expression.trim().split("\\s+");
         String operator;
         double secondParse;

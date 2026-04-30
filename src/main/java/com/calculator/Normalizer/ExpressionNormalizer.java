@@ -1,4 +1,4 @@
-package com.calculator;
+package com.calculator.Normalizer;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -36,16 +36,16 @@ public class ExpressionNormalizer {
 
     public String normalize(String input) {
 
-        String ww = input.toLowerCase().trim();
-        String[] tt = ww.split("\\s+");
-        int operT = opr(tt);
-        if (operT == 0 || operT == tt.length - 1) {
+        String normalizedInput = input.toLowerCase().trim();
+        String[] tokens= normalizedInput.split("\\s+");
+        int operatorIndex = findOperationIndex(tokens);
+        if (operatorIndex == 0 || operatorIndex == tokens.length - 1) {
             throw new IllegalArgumentException("Некорректное выражение");
         }
 
-        String[] firstHalf = Arrays.copyOfRange(tt, 0, operT);
-        String[] secondHalf = Arrays.copyOfRange(tt, operT + 1, tt.length);
-        String newOperation = operation.get(tt[operT]);
+        String[] firstHalf = Arrays.copyOfRange(tokens, 0, operatorIndex);
+        String[] secondHalf = Arrays.copyOfRange(tokens, operatorIndex + 1, tokens.length);
+        String newOperation = operation.get(tokens[operatorIndex]);
 
         int firstParseHalf = parseNumber(firstHalf);
         int secondParseHalf = parseNumber(secondHalf);
@@ -54,7 +54,7 @@ public class ExpressionNormalizer {
 
     }
 
-    int opr(String[] tokens) {
+    public int findOperationIndex(String[] tokens) {
         for (int i = 0; i < tokens.length; i++) {
             if (operation.containsKey(tokens[i]))
                 return i;
@@ -62,7 +62,7 @@ public class ExpressionNormalizer {
         throw new IllegalArgumentException();
     }
 
-    int parseNumber(String[] number) {
+    public int parseNumber(String[] number) {
         int result = 0;
         int lastRank = Integer.MAX_VALUE;
 

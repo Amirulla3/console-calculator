@@ -1,18 +1,18 @@
-package com.calculator;
+package com.calculator.History;
 
 import java.util.ArrayList;
 
 public class HistoryManager {
     ArrayList<String> historyExpressionFormatter = new ArrayList<>();
 
-    void addHistory(String stringgg) {
+    public void addHistory(String stringgg) {
         if (historyExpressionFormatter.size() >= 10) {
             historyExpressionFormatter.remove(0);
         }
         historyExpressionFormatter.add(stringgg);
     }
 
-    void viewHistory() {
+    public void viewHistory() {
         if (historyExpressionFormatter.isEmpty()) {
             System.out.println("История пуста!");
         } else {
@@ -22,7 +22,7 @@ public class HistoryManager {
         }
     }
 
-    void lastExpressionFormatterHistory() {
+    public void lastExpressionFormatterHistory() {
         if (historyExpressionFormatter.isEmpty()) {
             System.out.println("История пуста!");
         } else {
@@ -30,7 +30,7 @@ public class HistoryManager {
         }
     }
 
-    void clearHistory() {
+    public void clearHistory() {
         historyExpressionFormatter.clear();
     }
 }

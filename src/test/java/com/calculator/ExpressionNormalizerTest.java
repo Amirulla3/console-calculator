@@ -1,6 +1,6 @@
 package com.calculator;
 
-import com.calculator.ExpressionNormalizer;
+import com.calculator.Normalizer.ExpressionNormalizer;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class ExpressionNormalizerTest {

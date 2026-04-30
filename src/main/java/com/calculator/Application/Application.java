@@ -1,4 +1,8 @@
-package com.calculator;
+package com.calculator.Application;
+
+import com.calculator.UserInterface.InputHandler;
+import com.calculator.UserInterface.OuputHandler;
+import com.calculator.Core.Service;
 
 public class Application {
     InputHandler InputHandler;

@@ -1,4 +1,4 @@
-package com.calculator;
+package com.calculator.UserInterface;
 
 import java.util.Scanner;
 
@@ -7,16 +7,16 @@ public class InputHandler {
     String inputScanner;
     String menuScanner;
 
-    InputHandler() {
+    public InputHandler() {
         this.scanner = new Scanner(System.in);
     }
 
-    String readExpression() {
+    public String readExpression() {
         inputScanner = scanner.nextLine();
         return inputScanner;
     }
 
-    String getMenuScanner() {
+    public String getMenuScanner() {
         menuScanner = scanner.nextLine();
         return menuScanner;
     }

@@ -1,7 +1,9 @@
-package com.calculator;
+package com.calculator.Core;
+
+import com.calculator.Model.Expression;
 
 public class Calculator {
-    double calculate(Expression expression) {
+    public double calculate(Expression expression) {
         switch (expression.operator) {
             case "+":
                 return expression.firstNumber + expression.secondNumber;

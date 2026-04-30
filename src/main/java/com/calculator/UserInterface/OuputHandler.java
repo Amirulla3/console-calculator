@@ -1,7 +1,7 @@
-package com.calculator;
+package com.calculator.UserInterface;
 
 public class OuputHandler {
-    void printMenu() {
+    public void printMenu() {
         System.out.println("----------Menu----------");
         System.out.println("1.Калькулятор");
         System.out.println("2.История");
@@ -12,35 +12,35 @@ public class OuputHandler {
         System.out.println("Выбери операцию: ");
     }
 
-    void calculate(String expression, double result) {
+    public void calculate(String expression, double result) {
         System.out.printf(expression + " = " + result + "\n");
     }
 
-    void outputString(String number) {
+    public void outputString(String number) {
         System.out.println(number);
     }
 
-    void outputExpression() {
+    public void outputExpression() {
         System.out.println("Введите выражение: ");
     }
 
-    void printUnknownCommand() {
+    public void printUnknownCommand() {
         System.out.println("Данной операции нет!");
     }
 
-    void exitFromCalculator() {
+    public void exitFromCalculator() {
         System.out.println("Выход из режим калькулятор!");
     }
 
-    void printExitApp() {
+    public void printExitApp() {
         System.out.println("Выход из приложения!");
     }
 
-    void argumentException() {
+    public void argumentException() {
         System.out.println("Неверный аргумент!");
     }
 
-    void aritmeticsException() {
+    public void aritmeticsException() {
         System.out.println("Деление на 0 невозможно!");
     }
 }
